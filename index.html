@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eliot Yoon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #2774AE;
+      --gold: #FFD100;
+      --dark: #1a1a1a;
+      --muted: #555;
+      --border: #ddd;
+      --bg: #fafafa;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --sans: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--blue);
+      padding: 0 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px;
+    }
+
+    .nav-name {
+      color: white;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      background: var(--blue);
+      padding: 3.5rem 2.5rem 3rem;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      color: white;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.78);
+      font-size: 1rem;
+      max-width: 480px;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem;
+      display: grid;
+      gap: 3rem;
+    }
+
+    /* SECTION */
+    .section-title {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      color: var(--blue);
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    /* ABOUT */
+    .about-text {
+      color: var(--muted);
+      font-size: 0.97rem;
+      max-width: 640px;
+    }
+
+    .about-text p + p { margin-top: 0.8rem; }
+
+    /* PROJECTS */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--blue);
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
+    }
+
+    .project-item h3 {
+      font-size: 0.97rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-item p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .project-item a {
+      font-size: 0.8rem;
+      color: var(--blue);
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.4rem;
+    }
+
+    .project-item a:hover { text-decoration: underline; }
+
+    /* CONTACT */
+    .contact-info {
+      font-size: 0.95rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-info a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      color: #aaa;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.2rem; }
+      .hero { padding: 2.5rem 1.2rem 2rem; }
+      .hero h1 { font-size: 2rem; }
+      main { padding: 2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-name" style="text-decoration:none;">Eliot Yoon</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>Eliot Yoon</h1>
+    <p>Master's Student at UCLA · Computer Science · Class of 2026</p>
+  </div>
+
+  <main>
+
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="about-text">
+        <p>I'm a first year Master's student studying Computer Science at UCLA. I completed my undergrad at UCLA as well, with a Bachelor's Degree in Computer Science with a minor in Data Science. I'm primarily interested in computer microarchitecture and the intersection between hardware and software, with a particular focus in GPUs and how our current systems can be improved in this new age of AI and machine learning.</p>
+        <p>I'm currently finishing my last quarter at UCLA and also working as a teaching assistant for CS 132, Compiler Construction.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-list">
+
+        <div class="project-item">
+          <h3>Flash Attention Implemented on the Vortex GPGPU Platform</h3>
+          <p>My final project for CS 259, GPU Microarchitecture. The goal of the project was to implement the FlashAttention algorithm on the Vortex GPGPU platform.</p>
+          <a href="docs/cs259_gpu_report.pdf">Paper →</a>
+          <br>        
+          <a href="https://github.com/eyoon1131/vortex/tree/flash_attention">View on GitHub →</a>
+        </div>
+        
+        <div class="project-item">
+          <h3>Investigating ROB Scaling in OOO Processors</h3>
+          <p>My final project for CS 251A, Advanced Computer Architecture. The goal of the project was to investigate the performance effects of increasing the ROB size in an OOO CPU and how a simplified Waiting Instruction Buffer could mitigate some of the issues that arise from arbitrarily increasing the ROB size.</p>
+          <a href="docs/cs251A_report.pdf">Paper →</a>
+          <br>
+          <a href="https://github.com/SteveZ-Cal/gem5-cs251a-project">View on GitHub →</a>
+        </div>
+
+        <div class="project-item">
+          <h3>Lottery Scheduled Distributed Lock Services for Multi-Tenant Coordination</h3>
+          <p>My final project for CS 214, Big Data Systems. The goal of the project was to implement lottery scheduling in a mock distributed lock service in order to investigate the effects on fairness and performance.</p>
+          <a href="docs/cs214_report.pdf">Paper →</a>
+          <br>
+          <a href="https://github.com/RyanWang3/multi-tenant-lock-service-simulator">View on GitHub →</a>
+        </div>
+
+        <div class="project-item">
+          <h3>AgentSociety Challenge: Building an Intelligent Recommendation Agent</h3>
+          <p>My final project for CS 245, Big Data Analytics. The goal of the project was to participate in the AgentSociety Challenge by implementing a Yelp recommendation agent.</p>
+          <a href="docs/cs245_report.pdf">Paper →</a>
+          <br>        
+          <a href="https://github.com/eyoon1131/AgentSocietyChallenge">View on GitHub →</a>
+        </div>
+
+        <div class="project-item">
+          <h3>Super Resolution</h3>
+          <p>My final project for CS 163, Computer Vision. The goal of the project was to investigate the HAT model for image super resolution tasks.</p>
+          <a href="https://ucladeepvision.github.io/CS163-Projects-2024Fall/2024/12/13/team24-super-resolution.html">Paper →</a>
+        </div>
+
+        <div class="project-item">
+          <h3>HTTP Web Server</h3>
+          <p>My final project for CS 130, Software Engineering. The goal of the project was to build a custom web server with support for Markdown file rendering using clean architectural principles.</p>
+          <a href="docs/cs130_report.pdf">Paper →</a>
+          <br>        
+          <a href="https://github.com/TheUmairKhan/cpp-web-server">View on GitHub →</a>
+        </div>
+
+        <div class="project-item">
+          <h3>Neon Circuit</h3>
+          <p>My final project for CS C174C, Computer Animation. The goal of the project was to develop a racing game using computer animation principles.</p>
+          <a href="https://github.com/eyoon1131/Neon_Circuit/blob/master/REPORT.md">Paper →</a>
+          <br>
+          <a href="Neon_Circuit/index.html">App →</a>
+          <br>
+          <a href="https://github.com/eyoon1131/Neon_Circuit">View on GitHub →</a>
+        </div>
+
+        <div class="project-item">
+          <h3>Air Pinball</h3>
+          <p>My final project for CS 174A, Computer Graphics. The goal of the project was to develop an app using computer graphics principles.</p>
+          <a href="Air-Pinball-174a/index.html">App →</a>
+          <br>
+          <a href="https://github.com/isabellaqian/Air-Pinball-174a">View on GitHub →</a>
+        </div>
+
+        <div class="project-item">
+          <h3>Racer Fitness</h3>
+          <p>My final project for CS 35L, Software Construction. The goal of the project was to build a web app for fitness tracking.</p>
+          <a href="https://shizhuo-zhu.github.io/CS-35L-Fall-2022/">App →</a>
+          <br>
+          <a href="https://github.com/Shizhuo-Zhu/CS-35L-Fall-2022">View on GitHub →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-info">
+        <span>📧 <a href="mailto:eliotyoon@cs.ucla.edu">eliotyoon@cs.ucla.edu</a></span>
+        <span>💼 <a href="https://www.linkedin.com/in/eliot-yoon/" target="_blank">linkedin.com/in/eliot-yoon</a></span>
+        <span>🐙 <a href="https://github.com/eyoon1131" target="_blank">github.com/eyoon1131</a></span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Eliot Yoon</footer>
+
+  <script>
+    const SHOW = 3;
+    const projects = document.querySelectorAll('.project-item');
+
+    projects.forEach((p, i) => {
+      if (i >= SHOW) p.style.display = 'none';
+    });
+
+    const btn = document.createElement('button');
+    btn.textContent = 'Show more';
+    btn.style.cssText = 'margin-top:0.8rem; background:none; border:1px solid #2774AE; color:#2774AE; padding:0.4rem 1rem; border-radius:4px; cursor:pointer; font-size:0.85rem;';
+
+    btn.onclick = () => {
+      projects.forEach(p => p.style.display = '');
+      btn.remove();
+    };
+
+    document.querySelector('.projects-list').appendChild(btn);
+  </script>
+</body>
+</html>
