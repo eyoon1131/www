@@ -95,6 +95,18 @@
       margin-bottom: 1.2rem;
     }
 
+    /* SUBSECTION */
+    .subsection-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
     /* ABOUT */
     .about-text {
       color: var(--muted);
@@ -103,6 +115,27 @@
     }
 
     .about-text p + p { margin-top: 0.8rem; }
+
+    /* EDUCATION AND EXPERIENCE */
+    .edu-item, .exp-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--blue);
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .edu-item h3, .exp-item h3 {
+      font-size: 0.97rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-item p, .exp-item p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
 
     /* PROJECTS */
     .projects-list {
@@ -186,7 +219,7 @@
 
   <div class="hero">
     <h1>Eliot Yoon</h1>
-    <p>Master's Student at UCLA · Computer Science · Class of 2026</p>
+    <p>M.S. Computer Science · UCLA · Class of 2026</p>
   </div>
 
   <main>
@@ -194,14 +227,46 @@
     <section id="about">
       <h2 class="section-title">About</h2>
       <div class="about-text">
-        <p>I'm a first year Master's student studying Computer Science at UCLA. I completed my undergrad at UCLA as well, with a Bachelor's Degree in Computer Science with a minor in Data Science. I'm primarily interested in computer microarchitecture and the intersection between hardware and software, with a particular focus in GPUs and how our current systems can be improved in this new age of AI and machine learning.</p>
-        <p>I'm currently finishing my last quarter at UCLA and also working as a teaching assistant for CS 132, Compiler Construction.</p>
+        <p>I recently completed my Master's degree in Computer Science at UCLA, where I also earned my Bachelor's degree in Computer Science with a minor in Data Science. My interests lie at the intersection of hardware and software, particularly GPU microarchitecture and how our computing systems can evolve to meet the demands of modern AI and machine learning workloads.</p>
+        <p>During my time at UCLA, I worked as a Teaching Assistant for CS 132, Compiler Construction, and completed a range of projects spanning GPU microarchitecture, distributed systems, and machine learning.</p>
+      </div>
+
+      <h3 class="subsection-title">Education</h3>
+      <div class="edu-item">
+        <h3>M.S. Computer Science - UCLA, 2026</h3>
+        <p>GPA: 3.963</p>
+      </div>
+      <div class="edu-item">
+        <h3>B.S. Computer Science, Minor in Data Science - UCLA, 2025</h3>
+        <p>GPA: 3.841</p>
+      </div>
+
+      <h3 class="subsection-title">Experience</h3>
+      <div class="exp-item">
+        <h3>Teaching Assistant - CS 132: Compiler Construction</h3>
+        <p>University of California, Los Angeles · Spring 2026</p>
+        <p>Supported instruction for an upper-division compiler construction course. Held office hours, assisted students with course material, and helped with grading.</p>
       </div>
     </section>
 
     <section id="projects">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title">Research and Projects</h2>
       <div class="projects-list">
+
+        <div class="project-item">
+          <h3>TMEM: Implementing Blackwell-Inspired Tensor Memory in the Vortex RISC-V GPGPU</h3>
+          <p>My Master's capstone project. The goal of the project was to implement Tensor Memory on the Vortex GPGPU platform and to investigate the effects of Tensor Memory on GPU workloads.</p>
+          <a href="docs/capstone_report.pdf">Paper →</a>
+          <br>        
+          <a href="https://github.com/eyoon1131/vortex/tree/tensor_mem">View on GitHub →</a>
+        </div>
+
+        <div class="project-item">
+          <h3>Investigating Machine Learning Warp Schedulers in General Purpose GPUs</h3>
+          <p>My final project for CS 259, System Architecture: Learning Machines. The goal of the project was to investigate the effects of various warp scheduling policies on the Vortex GPGPU platform, including a simple Perceptron-based ML warp scheduling policy.</p>
+          <a href="docs/cs259_warp_report.pdf">Paper →</a>
+          <br>        
+        </div>
 
         <div class="project-item">
           <h3>Flash Attention Implemented on the Vortex GPGPU Platform</h3>
