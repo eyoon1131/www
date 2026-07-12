@@ -173,6 +173,11 @@
 
     .project-item a:hover { text-decoration: underline; }
 
+    .project-highlight {
+      color: var(--blue);
+      font-style: italic;
+    }
+
     /* CONTACT */
     .contact-info {
       font-size: 0.95rem;
@@ -234,7 +239,7 @@
       <h3 class="subsection-title">Education</h3>
       <div class="edu-item">
         <h3>M.S. Computer Science - UCLA, 2026</h3>
-        <p>GPA: 3.963</p>
+        <p>GPA: 3.889</p>
       </div>
       <div class="edu-item">
         <h3>B.S. Computer Science, Minor in Data Science - UCLA, 2025</h3>
@@ -256,6 +261,7 @@
         <div class="project-item">
           <h3>TMEM: Implementing Blackwell-Inspired Tensor Memory in the Vortex RISC-V GPGPU</h3>
           <p>My Master's capstone project. The goal of the project was to implement Tensor Memory on the Vortex GPGPU platform and to investigate the effects of Tensor Memory on GPU workloads.</p>
+          <p class="project-highlight">Extended the Vortex RISC-V GPGPU in SystemVerilog with a custom ISA extension and dedicated tensor memory unit inspired by NVIDIA Blackwell, demonstrating up to 3x cycle reduction for large matrix workloads via RTL simulation.</p>
           <a href="docs/capstone_report.pdf">Paper →</a>
           <br>        
           <a href="https://github.com/eyoon1131/vortex/tree/tensor_mem">View on GitHub →</a>
@@ -264,6 +270,7 @@
         <div class="project-item">
           <h3>Investigating Machine Learning Warp Schedulers in General Purpose GPUs</h3>
           <p>My final project for CS 259, System Architecture: Learning Machines. The goal of the project was to investigate the effects of various warp scheduling policies on the Vortex GPGPU platform, including a simple Perceptron-based ML warp scheduling policy.</p>
+          <p class="project-highlight">Built a lightweight perceptron-based warp scheduler in C++ within the Vortex SimX simulator and evaluated it against static policies across 12 GPU kernels, demonstrating that learned runtime features like memory pressure and stall history improve scheduling on workloads with dynamic behavior.</p>
           <a href="docs/cs259_warp_report.pdf">Paper →</a>
           <br>        
         </div>
@@ -271,6 +278,7 @@
         <div class="project-item">
           <h3>Flash Attention Implemented on the Vortex GPGPU Platform</h3>
           <p>My final project for CS 259, GPU Microarchitecture. The goal of the project was to implement the FlashAttention algorithm on the Vortex GPGPU platform.</p>
+          <p class="project-highlight">Ported FlashAttention to the open-source Vortex RISC-V GPGPU with both a scalar SIMT and TCU-accelerated implementation in C++, revealing how register constraints and small sequence lengths limit I/O-aware algorithms on academic GPU platforms.</p>
           <a href="docs/cs259_gpu_report.pdf">Paper →</a>
           <br>        
           <a href="https://github.com/eyoon1131/vortex/tree/flash_attention">View on GitHub →</a>
@@ -279,6 +287,7 @@
         <div class="project-item">
           <h3>Investigating ROB Scaling in OOO Processors</h3>
           <p>My final project for CS 251A, Advanced Computer Architecture. The goal of the project was to investigate the performance effects of increasing the ROB size in an OOO CPU and how a simplified Waiting Instruction Buffer could mitigate some of the issues that arise from arbitrarily increasing the ROB size.</p>
+          <p class="project-highlight">Modified the gem5 cycle-accurate simulator in C++ to implement both finite and infinite variants of a Waiting Instruction Buffer, demonstrating across SPEC 2017 benchmarks that ROB scaling alone fails to improve IPC due to issue queue bottlenecks.</p>
           <a href="docs/cs251A_report.pdf">Paper →</a>
           <br>
           <a href="https://github.com/SteveZ-Cal/gem5-cs251a-project">View on GitHub →</a>
@@ -287,6 +296,7 @@
         <div class="project-item">
           <h3>Lottery Scheduled Distributed Lock Services for Multi-Tenant Coordination</h3>
           <p>My final project for CS 214, Big Data Systems. The goal of the project was to implement lottery scheduling in a mock distributed lock service in order to investigate the effects on fairness and performance.</p>
+          <p class="project-highlight">Implemented a real async TCP network backend for a distributed lock service simulator, validating that lottery scheduling achieves up to 0.98 SLO-throughput vs. 0.71 for FIFO under high load, while revealing that proportional access alone is insufficient for fairness in asymmetric workloads.</p>
           <a href="docs/cs214_report.pdf">Paper →</a>
           <br>
           <a href="https://github.com/RyanWang3/multi-tenant-lock-service-simulator">View on GitHub →</a>
@@ -295,6 +305,7 @@
         <div class="project-item">
           <h3>AgentSociety Challenge: Building an Intelligent Recommendation Agent</h3>
           <p>My final project for CS 245, Big Data Analytics. The goal of the project was to participate in the AgentSociety Challenge by implementing a Yelp recommendation agent.</p>
+          <p class="project-highlight">Designed and evaluated an LLM-based recommendation agent with task decomposition, prompt engineering, and ensemble voting on the AgentSociety Challenge benchmark, achieving 56.94% average hit rate, a 21% gain over baseline, by extracting semantic signals from Yelp review text.</p>
           <a href="docs/cs245_report.pdf">Paper →</a>
           <br>        
           <a href="https://github.com/eyoon1131/AgentSocietyChallenge">View on GitHub →</a>
@@ -303,12 +314,14 @@
         <div class="project-item">
           <h3>Super Resolution</h3>
           <p>My final project for CS 163, Computer Vision. The goal of the project was to investigate the HAT model for image super resolution tasks.</p>
+          <p class="project-highlight">Evaluated the HAT (Hybrid Attention Transformer) super-resolution model on novel real-world images including UCLA campus photos, setting up an end-to-end inference and evaluation pipeline in PyTorch/Colab and finding that ImageNet pretraining causes the model to reconstruct architectural scenes more accurately than human faces.</p>
           <a href="https://ucladeepvision.github.io/CS163-Projects-2024Fall/2024/12/13/team24-super-resolution.html">Paper →</a>
         </div>
 
         <div class="project-item">
           <h3>HTTP Web Server</h3>
           <p>My final project for CS 130, Software Engineering. The goal of the project was to build a custom web server with support for Markdown file rendering using clean architectural principles.</p>
+          <p class="project-highlight">Designed and deployed a multithreaded HTTP web server in C++ featuring dynamic request routing, an in-memory CRUD API, and real-time Markdown rendering, with unit and integration tests via GoogleTest and cloud deployment on GCP.</p>
           <a href="docs/cs130_report.pdf">Paper →</a>
           <br>        
           <a href="https://github.com/TheUmairKhan/cpp-web-server">View on GitHub →</a>
@@ -317,6 +330,7 @@
         <div class="project-item">
           <h3>Neon Circuit</h3>
           <p>My final project for CS C174C, Computer Animation. The goal of the project was to develop a racing game using computer animation principles.</p>
+          <p class="project-highlight">Built the physics simulation for a WebGL racing game in JavaScript, implementing symplectic Euler integration for car and item movement, a spring-damper collision response system, and Hermite spline-based track collision detection.</p>
           <a href="https://github.com/eyoon1131/Neon_Circuit/blob/master/REPORT.md">Paper →</a>
           <br>
           <a href="Neon_Circuit/index.html">App →</a>
@@ -327,6 +341,7 @@
         <div class="project-item">
           <h3>Air Pinball</h3>
           <p>My final project for CS 174A, Computer Graphics. The goal of the project was to develop an app using computer graphics principles.</p>
+          <p class="project-highlight">Implemented custom 3D shaders, lighting, and procedural celestial body models for the game objects and environment.</p>
           <a href="Air-Pinball-174a/index.html">App →</a>
           <br>
           <a href="https://github.com/isabellaqian/Air-Pinball-174a">View on GitHub →</a>
@@ -335,6 +350,7 @@
         <div class="project-item">
           <h3>Racer Fitness</h3>
           <p>My final project for CS 35L, Software Construction. The goal of the project was to build a web app for fitness tracking.</p>
+          <p class="project-highlight">Was primarily responsible for the backend development of the app, utilizing Firebase for database management and user authentication.</p>
           <a href="https://shizhuo-zhu.github.io/CS-35L-Fall-2022/">App →</a>
           <br>
           <a href="https://github.com/Shizhuo-Zhu/CS-35L-Fall-2022">View on GitHub →</a>
