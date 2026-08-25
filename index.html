@@ -260,8 +260,8 @@
 
         <div class="project-item">
           <h3>TMEM: Implementing Blackwell-Inspired Tensor Memory in the Vortex RISC-V GPGPU</h3>
-          <p>My Master's capstone project. The goal of the project was to implement Tensor Memory on the Vortex GPGPU platform and to investigate the effects of Tensor Memory on GPU workloads.</p>
-          <p class="project-highlight">Extended the Vortex RISC-V GPGPU in SystemVerilog with a custom ISA extension and dedicated tensor memory unit inspired by NVIDIA Blackwell, demonstrating up to 3x cycle reduction for large matrix workloads via RTL simulation.</p>
+          <p>My Master's capstone project, since extended independently. The goal was to implement Tensor Memory and UMMA on the Vortex GPGPU platform and investigate the effects of Tensor Memory on GPU workloads, then extend the design to support multiple concurrent CTAs sharing the hardware.</p>
+          <p class="project-highlight">Extended the Vortex RISC-V GPGPU in SystemVerilog with a custom ISA extension and dedicated tensor memory unit inspired by NVIDIA Blackwell, demonstrating up to 3× cycle reduction for large matrix workloads via RTL simulation. Later added multi-CTA support with a CTA-scoped memory allocator, per-CTA bank storage with arbitration, a hardware RAW-hazard interlock, and a parallel functional/timing model in C++.</p>
           <a href="docs/capstone_report.pdf">Paper →</a>
           <br>        
           <a href="https://github.com/eyoon1131/vortex/tree/tensor_mem">View on GitHub →</a>
