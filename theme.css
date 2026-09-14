@@ -1,0 +1,183 @@
+/*
+  Shared site theme: fixed blue/white/gold header component (used by every
+  page) plus a toggleable light/dark theme for everything below it.
+*/
+
+:root {
+  --blue: #2774AE;
+  --gold: #FFD100;
+
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #ddd;
+  --footer-muted: #aaa;
+  --content-primary: var(--blue);
+  --content-accent: var(--gold);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1a1a;
+    --surface: #262626;
+    --text: #f0f0f0;
+    --muted: #aaa;
+    --border: #333;
+    --footer-muted: #777;
+    --content-primary: var(--blue);
+    --content-accent: var(--gold);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --surface: #262626;
+  --text: #f0f0f0;
+  --muted: #aaa;
+  --border: #333;
+  --footer-muted: #777;
+  --content-primary: var(--blue);
+  --content-accent: var(--gold);
+}
+
+/* Smooth fade for theme-driven colors */
+*, *::before, *::after {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+/* HEADER (nav + hero) */
+nav {
+  background: var(--blue);
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+}
+
+.nav-name {
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; line-height: normal; }
+
+.nav-links li { display: flex; align-items: center; }
+
+.nav-links a {
+  color: rgba(255,255,255,0.82);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.hero {
+  background: var(--blue);
+  padding: 3.5rem 2.5rem 3rem;
+  border-bottom: 4px solid var(--gold);
+}
+
+.hero h1 {
+  font-family: var(--serif, Georgia, serif);
+  font-size: 2.6rem;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: rgba(255,255,255,0.78);
+  font-size: 1rem;
+  max-width: 480px;
+}
+
+@media (max-width: 600px) {
+  nav { padding: 0 1.2rem; }
+  .hero { padding: 2.5rem 1.2rem 2rem; }
+  .hero h1 { font-size: 2rem; }
+}
+
+/* THEME TOGGLE SWITCH */
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.theme-toggle-auto {
+  position: absolute;
+  top: 50%;
+  left: 34px;
+  transform: translate(-50%, -50%);
+  color: rgba(0,0,0,0.55);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  pointer-events: none;
+}
+
+.theme-toggle--checked .theme-toggle-auto {
+  left: 20px;
+}
+
+.theme-toggle:not(.theme-toggle--auto) .theme-toggle-auto {
+  display: none;
+}
+
+.theme-toggle input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 54px;
+  height: 18px;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.3);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.theme-toggle input::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  transition: transform 0.15s;
+}
+
+.theme-toggle input:checked {
+  background: var(--gold);
+}
+
+.theme-toggle input:checked::before {
+  transform: translateX(36px);
+}
+
+.theme-toggle--fixed {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  z-index: 1000;
+}
+
+.theme-toggle--fixed input {
+  background: rgba(0,0,0,0.15);
+}
+
+.theme-toggle--fixed .theme-toggle-auto {
+  color: var(--muted);
+}

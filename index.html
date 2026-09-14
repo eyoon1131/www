@@ -9,16 +9,20 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || t === 'light') {
+        document.documentElement.setAttribute('data-theme', t);
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="/theme.css">
+  <script src="/theme.js" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue: #2774AE;
-      --gold: #FFD100;
-      --dark: #1a1a1a;
-      --muted: #555;
-      --border: #ddd;
-      --bg: #fafafa;
       --serif: 'Source Serif 4', Georgia, serif;
       --sans: 'Inter', sans-serif;
     }
@@ -26,58 +30,9 @@
     body {
       font-family: var(--sans);
       background: var(--bg);
-      color: var(--dark);
+      color: var(--text);
       line-height: 1.6;
       font-weight: 300;
-    }
-
-    /* NAV */
-    nav {
-      background: var(--blue);
-      padding: 0 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 56px;
-    }
-
-    .nav-name {
-      color: white;
-      font-weight: 500;
-      font-size: 1rem;
-      letter-spacing: 0.01em;
-    }
-
-    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
-
-    .nav-links a {
-      color: rgba(255,255,255,0.82);
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.15s;
-    }
-
-    .nav-links a:hover { color: var(--gold); }
-
-    /* HERO */
-    .hero {
-      background: var(--blue);
-      padding: 3.5rem 2.5rem 3rem;
-      border-bottom: 4px solid var(--gold);
-    }
-
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: 2.6rem;
-      color: white;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero p {
-      color: rgba(255,255,255,0.78);
-      font-size: 1rem;
-      max-width: 480px;
     }
 
     /* MAIN */
@@ -93,9 +48,9 @@
     .section-title {
       font-family: var(--serif);
       font-size: 1.4rem;
-      color: var(--blue);
+      color: var(--content-primary);
       padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--gold);
+      border-bottom: 2px solid var(--content-accent);
       margin-bottom: 1.2rem;
     }
 
@@ -122,9 +77,9 @@
 
     /* EDUCATION AND EXPERIENCE */
     .edu-item, .exp-item {
-      background: white;
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-left: 4px solid var(--blue);
+      border-left: 4px solid var(--content-primary);
       border-radius: 4px;
       padding: 1rem 1.2rem;
       margin-bottom: 1rem;
@@ -149,9 +104,9 @@
     }
 
     .project-item {
-      background: white;
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-left: 4px solid var(--blue);
+      border-left: 4px solid var(--content-primary);
       border-radius: 4px;
       padding: 1rem 1.2rem;
     }
@@ -169,7 +124,7 @@
 
     .project-item a {
       font-size: 0.8rem;
-      color: var(--blue);
+      color: var(--content-primary);
       text-decoration: none;
       display: inline-block;
       margin-top: 0.4rem;
@@ -178,7 +133,7 @@
     .project-item a:hover { text-decoration: underline; }
 
     .project-highlight {
-      color: var(--blue);
+      color: var(--content-primary);
       font-style: italic;
     }
 
@@ -192,7 +147,7 @@
     }
 
     .contact-info a {
-      color: var(--blue);
+      color: var(--content-primary);
       text-decoration: none;
     }
 
@@ -203,14 +158,11 @@
       text-align: center;
       padding: 1.5rem;
       font-size: 0.78rem;
-      color: #aaa;
+      color: var(--footer-muted);
       border-top: 1px solid var(--border);
     }
 
     @media (max-width: 600px) {
-      nav { padding: 0 1.2rem; }
-      .hero { padding: 2.5rem 1.2rem 2rem; }
-      .hero h1 { font-size: 2rem; }
       main { padding: 2rem 1.2rem; }
     }
   </style>
@@ -393,7 +345,7 @@
 
     const btn = document.createElement('button');
     btn.textContent = 'Show more';
-    btn.style.cssText = 'margin-top:0.8rem; background:none; border:1px solid #2774AE; color:#2774AE; padding:0.4rem 1rem; border-radius:4px; cursor:pointer; font-size:0.85rem;';
+    btn.style.cssText = 'margin-top:0.8rem; background:none; border:1px solid var(--content-primary); color:var(--content-primary); padding:0.4rem 1rem; border-radius:4px; cursor:pointer; font-size:0.85rem;';
 
     btn.onclick = () => {
       projects.forEach(p => p.style.display = '');
